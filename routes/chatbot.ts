@@ -146,8 +146,7 @@ async function setUserName (user: User, req: Request, res: Response) {
     bot.addUser(`${updatedUser.id}`, req.body.query)
     res.status(200).json({
       action: 'response',
-      body: bot.greet(`${updatedUser.id}`),
-      token: updatedToken
+      body: bot.greet(`${updatedUser.id}`)
     })
   } catch (err) {
     logger.error(`Could not set username: ${utils.getErrorMessage(err)}`)
